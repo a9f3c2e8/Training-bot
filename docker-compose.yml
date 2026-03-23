@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: training_bot
+    restart: unless-stopped
+    ports:
+      - "47563:47563"
+    env_file:
+      - .env
+    volumes:
+      - ./training_bot.db:/app/training_bot.db
